@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  has_many :users
+  has_many :users, dependent: :destroy
   has_one :offer
 
   validates :start_date, presence: true
