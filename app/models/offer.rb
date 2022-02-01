@@ -5,4 +5,5 @@ class Offer < ApplicationRecord
   validates :location, presence: true
   validates :fee, presence: true, numericality: true
   validates :date, presence: true
+  validates :title, presence: true
 end
