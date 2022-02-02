@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_02_01_182809) do
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
-  
+
   create_table "offers", force: :cascade do |t|
     t.text "description"
     t.string "location"
