@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # has_many :offers
+  has_many :offers, through: :bookings
 
-  def offers
+  def my_offers
     Offer.where(organizer_id: id)
   end
 end
