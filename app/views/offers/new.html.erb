@@ -2,7 +2,14 @@
 <p>Find me in app/views/offers/new.html.erb</p>
 
 <div>
-  <%= simple_form_for(@offer) do |o| %>
+  <%= simple_form_for @offer, :html => { :class => 'form-horizontal' } do |o| %>
+    <%- if o.error_notification %>
+      <div class="alert alert-error fade in">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        <%= o.error_notification %>
+      </div>
+  <%- end %>
+
     <%= o.input :title %>
     <%= o.input :description %>
     <%= o.input :location %>
