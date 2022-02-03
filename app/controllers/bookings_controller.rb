@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(bookings_params)
     @booking.offer = @offer
+    @booking.user = current_user
     if @booking.save
       redirect_to bookings_path(@booking) #Shall it also redirect to the "Overview"?
     else
