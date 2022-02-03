@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Deleting bookings'
+Booking.delete_all
+puts 'bookings deleted'
+
 puts 'Deleting offers'
 Offer.delete_all
 puts 'offers deleted'
@@ -16,8 +20,8 @@ puts 'Users deleted'
 
 puts '----------------------------------------------------------------'
 
-puts 'Creating 3 users'
-3.times do |i|
+puts 'Creating 4 users'
+4.times do |i|
   puts "Creating user #{i + 1}"
   user = User.new(
     {
@@ -34,15 +38,15 @@ puts 'Creating 3 users'
   end
 end
 
-puts 'Creating 3 offers'
-3.times do |i|
+puts 'Creating 6 offers'
+6.times do |i|
   puts "Creating offer #{i + 1}"
   offer = Offer.new(
     {
-      title: 'Awesome surf camp in Baleal, Portugal',
-      description: 'Awesome surf camp',
-      location: 'Portugal',
-      fee: 99.99,
+      title: "Awesome #{Faker::Team.sport} camp in #{Faker::Address.city}, #{Faker::Address.country}",
+      description: "Awesome #{Faker::Team.sport} camp",
+      location: Faker::Address.country,
+      fee: rand(90..160),
       date: Date.today + rand(90),
       organizer: User.all.sample
     }
@@ -56,8 +60,8 @@ puts 'Creating 3 offers'
   end
 end
 
-puts 'Creating 3 bookings'
-3.times do |i|
+puts 'Creating 2 bookings'
+2.times do |i|
   puts "Creating booking #{i + 1}"
   offer = Offer.all.sample
 
