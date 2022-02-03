@@ -1,2 +1,14 @@
 <h1>Offers#show</h1>
 <p>Find me in app/views/offers/show.html.erb</p>
+
+
+<h2><%= @offer.title %></h2>
+<%= @offer.description %>
+<p><%= @offer.location %></p>
+<p><%= @offer.fee %></p>
+<p><%= @offer.date %></p>
+
+<%= link_to "Delete #{@offer.name}",
+            offer_path(@offer),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
