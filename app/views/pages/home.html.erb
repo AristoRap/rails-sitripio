@@ -9,6 +9,56 @@
 </div>
 
 
+
+    <% @offers.each do |offer| %>
+      <div class="co-12 colsm-6 col-md-4 mb-3">
+        <%= link_to offer_path(offer), class:'text-decoration-none' do %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
+            <%= offer.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+
+<div class="main">
+  <ul class="cards">
+    <% @offers.each do |offer| %>
+    <% end %>
+    <li class="cards_item">
+      <div class="card-trip">
+    <img src="https://images.unsplash.com/photo-1621209729356-2929f206ea1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Awesome surf camp in Baleal, Portugal</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam dignissimos obcaecati quo porro nam odit ea voluptate sit nemo, quidem praesentium assumenda architecto odio? Libero debitis optio excepturi reiciendis.
+        </p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="main">
   <ul class="cards">
     <li class="cards_item">
@@ -22,79 +72,8 @@
       </div>
       <h2 class="card-trip-pricing">£99.99</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    </div>
-  </div>
-    </li>
-    <li class="cards_item">
-      <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1609870025624-98b62826e80a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Awesome surf camp in Baleal, Portugal</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam dignissimos obcaecati quo porro nam odit ea voluptate sit nemo, quidem praesentium assumenda architecto odio? Libero debitis optio excepturi reiciendis.
-        </p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-  </div>
-    </li>
-    <li class="cards_item">
-      <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1621209729356-2929f206ea1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Awesome surf camp in Baleal, Portugal</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam dignissimos obcaecati quo porro nam odit ea voluptate sit nemo, quidem praesentium assumenda architecto odio? Libero debitis optio excepturi reiciendis.
-        </p>
-      </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    </div>
-  </div>
-    </li>
-    <li class="cards_item">
-      <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1621209729356-2929f206ea1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Awesome surf camp in Baleal, Portugal</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam dignissimos obcaecati quo porro nam odit ea voluptate sit nemo, quidem praesentium assumenda architecto odio? Libero debitis optio excepturi reiciendis.
-        </p>
-      </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    </div>
-  </div>
-    </li>
-    <li class="cards_item">
-      <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1621209729356-2929f206ea1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Awesome surf camp in Baleal, Portugal</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam dignissimos obcaecati quo porro nam odit ea voluptate sit nemo, quidem praesentium assumenda architecto odio? Libero debitis optio excepturi reiciendis.
-        </p>
-      </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    </div>
-  </div>
-    </li>
-    </li>
-    <li class="cards_item">
-      <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1621209729356-2929f206ea1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Awesome surf camp in Baleal, Portugal</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam totam dignissimos obcaecati quo porro nam odit ea voluptate sit nemo, quidem praesentium assumenda architecto odio? Libero debitis optio excepturi reiciendis.
-        </p>
-      </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    </div>
-  </div>
     </li>
   </ul>
 </div>
