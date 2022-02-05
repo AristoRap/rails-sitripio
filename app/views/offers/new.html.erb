@@ -1,2 +1,11 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
+<div>
+  <%= simple_form_for(@offer) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :fee %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<%= link_to 'Back', offers_path %>
