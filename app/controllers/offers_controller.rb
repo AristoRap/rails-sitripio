@@ -1,6 +1,11 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: %i[show edit update destroy]
 
+  def overview
+    @user_offers = current_user.my_offers
+    @booked_offers = current_user.offers
+  end
+
   def index
     @offers = Offer.all
   end
@@ -45,6 +50,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :fee, :date)
+    params.require(:offer).permit(:title, :description, :fee, :start_date, :end_date, :location, photos: [])
   end
 end
