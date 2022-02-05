@@ -1,6 +1,11 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: %i[show edit update destroy]
 
+  def overview
+    @user_offers = current_user.my_offers
+    @booked_offers = current_user.offers
+  end
+
   def index
     @offers = Offer.all
   end

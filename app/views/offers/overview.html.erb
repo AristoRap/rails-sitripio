@@ -1,0 +1,59 @@
+<h1>My Overview</h1>
+
+<div class="main">
+  <h2>My offers</h2>
+  <% if @my_offers.nil? || @my_offers.empty? %>
+    <p>No offers organized.</p>
+  <% else %>
+    <ul class="cards">
+      <% @my_offers.each do |offer| %>
+        <%= link_to offer do %>
+          <li class="cards_item">
+            <div class="card-trip">
+              <img src="https://source.unsplash.com/random" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= offer.title %></h2>
+                  <p><%= offer.description %></p>
+                  <h2 id="card-location"><%= offer.location %></h2>
+                </div>
+                <div>
+                  <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <h2>Booked offers</h2>
+  <% if @booked_offers.nil? || @booked_offers.empty? %>
+    <p>No offers booked.</p>
+  <% else %>
+    <ul class="cards">
+      <% @booked_offers.each do |offer| %>
+        <%= link_to offer do %>
+          <li class="cards_item">
+            <div class="card-trip">
+              <img src="https://source.unsplash.com/random" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= offer.title %></h2>
+                  <p><%= offer.description %></p>
+                  <h2 id="card-location"><%= offer.location %></h2>
+                </div>
+                <div>
+                  <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
