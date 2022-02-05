@@ -1,0 +1,53 @@
+.container{
+  padding: 1rem;
+}
+
+.container-media-gallery {
+  display: grid;
+  border-radius: 5px;
+  // width: 500px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.media-gallery-left{
+  background: lightblue;
+  margin-right: 1rem;
+  /* Just so it's visible */
+}
+
+.media-gallery-right{
+  flex: 1;
+  /* Grow to rest of container */
+  background: lightgreen;
+  /* Just so it's visible */
+}
+
+
+.info-panel {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-info-panel {
+  flex: 1;
+  /* Grow to rest of container */
+  background: lightgreen;
+  /* Just so it's visible */
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+.right-info-panel {
+  width: 400px;
+  background: lightblue;
+  /* Just so it's visible */
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+.map  {
+  background: rgb(29, 76, 91);
+}
