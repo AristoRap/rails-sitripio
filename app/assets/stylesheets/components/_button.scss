@@ -39,3 +39,20 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.simple_form .btn-smpl-form {
+  display: block;
+  margin: 20px auto 0;
+  margin-bottom: 16px;
+  // width: 150px;
+  // height: 40px;
+  border-radius: 0.5rem;
+  border: none;
+  color: #ffffff;
+  background: #1EDD88;
+  font-weight: bold;
+}
+
+.simple_form .btn-smpl-form:hover {
+  background: #3ca375;
+}
