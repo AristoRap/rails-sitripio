@@ -1,0 +1,29 @@
+/* ----- SimpleForm Styles ----- */
+
+.simple-form {
+  margin-top: 24px;
+  padding: 24px;
+  background-color: #fcfcfc;
+}
+
+.simple-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+  clear: both; /* Required for Webkit, but not for Gecko */
+}
+
+.simple_form {
+  border-radius: .5rem;
+  width: 420px;
+  margin: 0 auto;
+  background-color: #fcfcfc;
+  padding: 20px 50px 40px;
+  box-shadow: 1px 4px 10px 1px #aaa;
+  font-family: sans-serif;
+}
