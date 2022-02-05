@@ -47,7 +47,8 @@ puts 'Creating 6 offers'
       description: "Awesome #{Faker::Team.sport} camp",
       location: Faker::Address.country,
       fee: rand(90..160),
-      date: Date.today + rand(90),
+      start_date: Date.today,
+      end_date: Date.today + rand(90),
       organizer: User.all.sample
     }
   )
@@ -69,8 +70,8 @@ puts 'Creating 2 bookings'
     {
       user: User.all.reject { |user| user == offer.organizer }.sample,
       offer: offer,
-      start_date: offer.date,
-      end_date: offer.date + rand(5)
+      start_date: offer.start_date,
+      end_date: offer.end_date
     }
   )
   if booking.save
