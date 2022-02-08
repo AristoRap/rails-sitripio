@@ -3,7 +3,7 @@
     <h1>Add yous trip:</strong></h1>
     <p></p>
   </div>
-<div class="simple-form-new">
+  <div class="simple-form-new">
   <%= simple_form_for(@offer) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
@@ -13,8 +13,7 @@
     <%= f.input :end_date %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit, class:"btn-smpl-form" %>
+    <%= link_to "cancel", overview_path, :class=>"btn-ghost" %>
   <% end %>
+  </div>
 </div>
-</div>
-
-<%= link_to 'Back', offers_path %>
