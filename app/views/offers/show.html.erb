@@ -41,12 +41,11 @@
           <div class="details-icons">
             <div class="details-icon">
               <i class="far fa-clock"></i>
-              <p>Duration: </p>
-
+              <p>Duration: <strong><%= @offer.days_duration %> days</strong></p>
             </div>
             <div class="details-icon">
               <i class="fas fa-users"></i>
-              <p>Maximum group size: </p>
+              <p>Maximum group size: <strong><%= @offer.capacity %> people</strong> </p>
             </div>
           </div>
         </div>
@@ -54,8 +53,8 @@
     </div>
     <div class="right-info-panel">
       <p class="title-label">OFFER DETAILS</p>
-      <div>
-        <%# <strong><%= link_to "Book now for €#{@offer.fee}", offer_bookings_path(@offer, @booking), method :post, class: "btn-flat" %></strong> %>
+      <div class="btn-flat rails-link-to text-decoration-none">
+        <strong><%= link_to "Book now for €#{@offer.fee}", offer_bookings_path(@offer), method: :post %></strong>
       </div>
     </div>
    </div>
