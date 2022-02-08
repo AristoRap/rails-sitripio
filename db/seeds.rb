@@ -49,7 +49,8 @@ puts 'Creating 6 offers'
       fee: rand(90..160),
       start_date: Date.today,
       end_date: Date.today + rand(90),
-      organizer: User.all.sample
+      organizer: User.all.sample,
+      capacity: rand(1..10)
     }
   )
   if offer.save
@@ -69,9 +70,7 @@ puts 'Creating 2 bookings'
   booking = Booking.new(
     {
       user: User.all.reject { |user| user == offer.organizer }.sample,
-      offer: offer,
-      start_date: offer.start_date,
-      end_date: offer.end_date
+      offer: offer
     }
   )
   if booking.save
