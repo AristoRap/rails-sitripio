@@ -70,9 +70,7 @@ puts 'Creating 2 bookings'
   booking = Booking.new(
     {
       user: User.all.reject { |user| user == offer.organizer }.sample,
-      offer: offer,
-      start_date: offer.start_date,
-      end_date: offer.end_date
+      offer: offer
     }
   )
   if booking.save
