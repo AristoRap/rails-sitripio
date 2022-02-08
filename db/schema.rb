@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_05_141851) do
+ActiveRecord::Schema.define(version: 2022_02_08_174442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_141851) do
     t.bigint "organizer_id", null: false
     t.string "title"
     t.date "end_date"
+    t.integer "capacity"
     t.index ["organizer_id"], name: "index_offers_on_organizer_id"
   end
 
