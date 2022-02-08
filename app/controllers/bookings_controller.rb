@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_offer, only: %i[new create]
+  before_action :set_offer, only: %i[create]
 
   def edit
   end
 
   def update
     if @booking.update(params[:booking])
-      redirect_to bookings_path(@booking), notice: "Successfuly updated booking." #Again with the redirecting
+      redirect_to offers_path, notice: "Successfuly updated booking." #Again with the redirecting
     else
       render :edit
     end
@@ -21,11 +21,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bookings_params)
+    @booking = Booking.new
     @booking.offer = @offer
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path(@booking) #Shall it also redirect to the "Overview"?
+      redirect_to offers_path #Shall it also redirect to the "Overview"?
     else
       render :new
     end
@@ -34,12 +34,8 @@ class BookingsController < ApplicationController
 
   private
 
-  def bookings_params
-    params.require(:bookings).permit(:start_date, :end_date)
+  def set_offer
+    @offer = Offer.find(params[:offer_id])
   end
 
-  def set_offer
-    @offer = Offer.find(params[:offer_id]) 
-  end
- 
 end
