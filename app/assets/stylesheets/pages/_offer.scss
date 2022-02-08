@@ -2,28 +2,16 @@
   padding: 1rem;
 }
 
-.container-media-gallery {
-  display: grid;
+.carousel-item img{
+  margin-top: 2rem;
   border-radius: 5px;
-  // width: 500px;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
+  height: 500px;
+  object-fit: cover;
 }
 
-.media-gallery-left{
-  background: lightblue;
-  margin-right: 1rem;
-  /* Just so it's visible */
+.title-label{
+  color: grey;
 }
-
-.media-gallery-right{
-  flex: 1;
-  /* Grow to rest of container */
-  background: lightgreen;
-  /* Just so it's visible */
-}
-
 
 .info-panel {
   margin-top: 1rem;
@@ -33,21 +21,76 @@
 
 .left-info-panel {
   flex: 1;
-  /* Grow to rest of container */
-  background: lightgreen;
-  /* Just so it's visible */
+  background: white;
+  border-radius: 5px;
   padding: 1rem;
   padding-right: 2rem;
+  margin-right: 1rem;
+}
+
+.organizer{
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.organizer img {
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.organizer-infos{
+  vertical-align: middle;
+}
+
+.overview-titles h3 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .right-info-panel {
   width: 400px;
-  background: lightblue;
-  /* Just so it's visible */
+  border-radius: 5px;
+  background: white;
   padding: 1rem;
-  padding-left: 2rem;
 }
 
+.details-icons{
+  display: grid;
+  margin-top: 1rem;
+
+}
+
+.details-icons p{
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.details-icon{
+  display: flex;
+  padding-right: 1rem;
+  align-items: center;
+}
+
+.details-icons i{
+  width: 20px;
+}
+
+
 .map  {
-  background: rgb(29, 76, 91);
+  margin-top: 1rem;
+  background-color: white;
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+}
+
+.trip-organizer{
+  width: 80px;
+  border-radius: 50%;
 }

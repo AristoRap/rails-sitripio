@@ -5,23 +5,3 @@
     <%= link_to "See all offers", offers_path, class: "btn-flat" %>
   </div>
 </div>
-
-<div class="main">
-  <ul class="cards">
-    <% @offers.each do |offer| %>
-      <li class="cards_item">
-        <div class="card-trip">
-        <img src="https://images.unsplash.com/photo-1621209729356-2929f206ea1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80" />
-        <div class="card-trip-infos">
-        <div>
-          <h2><%= offer.title %></h2>
-          <p><%= offer.description %></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= offer.fee %></h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
-      </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
