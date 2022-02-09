@@ -8,6 +8,14 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+      }
+    end
   end
 
   def new
