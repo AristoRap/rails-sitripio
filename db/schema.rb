@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_180745) do
     t.bigint "organizer_id", null: false
     t.string "title"
     t.date "end_date"
+    t.integer "capacity"
     t.index ["organizer_id"], name: "index_offers_on_organizer_id"
   end
 

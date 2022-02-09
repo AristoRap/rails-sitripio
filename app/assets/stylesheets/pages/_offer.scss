@@ -1,0 +1,96 @@
+.container{
+  padding: 1rem;
+}
+
+.carousel-item img{
+  margin-top: 2rem;
+  border-radius: 5px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.title-label{
+  color: grey;
+}
+
+.info-panel {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-info-panel {
+  flex: 1;
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+}
+
+.organizer{
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.organizer img {
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.organizer-infos{
+  vertical-align: middle;
+}
+
+.overview-titles h3 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.right-info-panel {
+  width: 400px;
+  border-radius: 5px;
+  background: white;
+  padding: 1rem;
+}
+
+.details-icons{
+  display: grid;
+  margin-top: 1rem;
+
+}
+
+.details-icons p{
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.details-icon{
+  display: flex;
+  padding-right: 1rem;
+  align-items: center;
+}
+
+.details-icons i{
+  width: 20px;
+}
+
+
+.map  {
+  margin-top: 1rem;
+  background-color: white;
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+}
+
+.trip-organizer{
+  width: 80px;
+  border-radius: 50%;
+}
