@@ -9,6 +9,8 @@ local:
 cloudinary:
   service: Cloudinary
   folder: <%= Rails.env %>
+
+  MAPBOX_API_KEY=pk.eyJ1Ijoid29oMjAyMSIsImEiOiJja3pmbjBwbGcwc3RhMm9vYzVqNXlsOTVjIn0.LAmOrIF6B2eb0217T8KEcA
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
