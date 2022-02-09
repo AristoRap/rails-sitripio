@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :offers do
     resources :bookings, only: [:create]
-    resources :reviews, only: %i[create update destroy]
+    resources :reviews, only: [:create]
   end
-
+  resources :reviews, only: %i[update destroy]
   resources :bookings, only: %i[show edit update destroy]
   # Do we need the show function since we are including all that in the "Overview" ?
 

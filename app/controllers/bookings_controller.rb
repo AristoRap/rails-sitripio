@@ -1,14 +1,15 @@
 class BookingsController < ApplicationController
   before_action :set_offer, only: %i[new create]
+  before_action :set_booking, only: %i[update destroy]
 
   def edit
   end
 
   def update
     if @booking.update(params[:booking])
-      redirect_to bookings_path(@booking), notice: "Successfuly updated booking." #Again with the redirecting
+      redirect_to offers_path(@offer), notice: "Successfuly updated booking."
     else
-      render :edit
+      render offers_path(@offer)
     end
   end
 
@@ -16,30 +17,25 @@ class BookingsController < ApplicationController
     @booking.destroy
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
-    @booking = Booking.new(bookings_params)
+    @booking = Booking.new
     @booking.offer = @offer
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path(@booking) #Shall it also redirect to the "Overview"?
+      redirect_to offers_path(@offer)
     else
-      render :new
+      render offers_path(@offer)
     end
 
   end
 
   private
 
-  def bookings_params
-    params.require(:bookings).permit(:start_date, :end_date)
+  def set_offer
+    @offer = Offer.find(params[:offer_id])
   end
 
-  def set_offer
-    @offer = Offer.find(params[:offer_id]) 
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
- 
 end
