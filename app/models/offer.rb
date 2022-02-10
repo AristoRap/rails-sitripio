@@ -5,6 +5,7 @@ class Offer < ApplicationRecord
 
   # => double-check, only option available that makes sense is latitude. Should be location in my opinion
   after_validation :geocode, if: :will_save_change_to_location?
+  has_many :reviews
 
   validates :description, presence: true
   validates :location, presence: true

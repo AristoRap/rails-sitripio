@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :offers, through: :bookings
+  has_many :reviews
 
   def my_offers
     Offer.where(organizer_id: id)

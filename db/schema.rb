@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_09_140103) do
+ActiveRecord::Schema.define(version: 2022_02_09_175255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_02_09_140103) do
     t.index ["organizer_id"], name: "index_offers_on_organizer_id"
   end
 
+
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
@@ -75,6 +76,16 @@ ActiveRecord::Schema.define(version: 2022_02_09_140103) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+  end
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "offer_id", null: false
+    t.text "content"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offer_id"], name: "index_reviews_on_offer_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,4 +105,6 @@ ActiveRecord::Schema.define(version: 2022_02_09_140103) do
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
   add_foreign_key "offers", "users", column: "organizer_id"
+  add_foreign_key "reviews", "offers"
+  add_foreign_key "reviews", "users"
 end
