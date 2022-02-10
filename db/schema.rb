@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2022_02_09_175255) do
     t.index ["organizer_id"], name: "index_offers_on_organizer_id"
   end
 
-
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
@@ -77,6 +76,7 @@ ActiveRecord::Schema.define(version: 2022_02_09_175255) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
   end
+
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "offer_id", null: false
