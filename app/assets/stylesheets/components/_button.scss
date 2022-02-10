@@ -21,11 +21,24 @@
   background: #1EDD88;
   transition: background 0.3s ease;
   text-align: center;
+  text-decoration: none;
 }
+
+.btn-flat a{
+  color: white;
+}
+
+.btn-flat a:hover{
+  color: var(--c3po-light-white);
+  text-decoration: none;
+}
+
+
 
 .btn-flat:hover {
   background: #1BCB7F;
   color: white;
+  text-decoration: none;
 }
 
 .btn-gradient {

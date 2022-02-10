@@ -18,6 +18,10 @@ ActiveStorage.start()
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+function myFunction() {
+  alert("I am an alert box!");
+}
+
 // External imports
 import "bootstrap";
 
