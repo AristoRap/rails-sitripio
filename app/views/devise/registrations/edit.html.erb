@@ -1,13 +1,13 @@
 <div class="container">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
   <div class="d-flex mb-3">
-    <div class="card mr-3 bg-dark" style="width: 18rem;">
+    <div class="card mr-3 bg-light" style="width: 18rem;">
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key %>
       <% else %>
         <%= image_tag asset_path('avatar_default.png') %>
       <% end %>
-      <div class="card-body">
+      <div class="card-body border-top">
         <h5 class="card-title text-white"><%= current_user.first_name %></h5>
         <p class="card-title text-muted"><%= current_user.email %></p>
       </div>
