@@ -1,6 +1,10 @@
 class Offer < ApplicationRecord
   belongs_to :organizer, class_name: 'User', foreign_key: "organizer_id", dependent: :destroy
   has_many_attached :photos
+  geocoded_by :location
+
+  # => double-check, only option available that makes sense is latitude. Should be location in my opinion
+  after_validation :geocode, if: :will_save_change_to_location?
   has_many :reviews
 
   validates :description, presence: true

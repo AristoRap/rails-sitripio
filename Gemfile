@@ -24,6 +24,9 @@ gem 'redis', '~> 4.0'
 gem 'bootstrap', '~> 5.1.3'
 gem 'faker'
 
+# Use geocoding as map service
+gem "geocoder"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
