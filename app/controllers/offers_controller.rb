@@ -13,7 +13,8 @@ class OffersController < ApplicationController
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
-        lng: offer.longitude
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
       }
     end
   end
