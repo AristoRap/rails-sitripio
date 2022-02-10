@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_offer, only: %i[new create]
   before_action :set_booking, only: %i[update destroy]
 
+
   def edit
   end
 
@@ -26,7 +27,6 @@ class BookingsController < ApplicationController
     else
       render offers_path(@offer)
     end
-
   end
 
   private
