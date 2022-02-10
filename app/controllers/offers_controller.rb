@@ -7,8 +7,11 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
-
+    if params[:query].present?
+      @offers = Offer.where.not(organizer_id: current_user.id).search_by_title_and_description(params[:query])
+    else
+      @offers = Offer.where.not(organizer_id: current_user.id)
+    end
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @offers.geocoded.map do |offer|
       {
