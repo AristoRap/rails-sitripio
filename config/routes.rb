@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   resources :offers do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:create]
+    resources :reviews, only: [:create]
   end
-
-  resources :bookings, only: [:show, :edit, :update, :destroy]
+  resources :reviews, only: %i[update destroy]
+  resources :bookings, only: %i[show edit update destroy]
   # Do we need the show function since we are including all that in the "Overview" ?
 
   devise_for :users
