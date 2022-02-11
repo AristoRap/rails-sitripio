@@ -52,9 +52,52 @@
       </div>
     </div>
     <div class="right-info-panel">
-      <p class="title-label">OFFER DETAILS</p>
-      <div class="btn-flat rails-link-to text-decoration-none">
-        <strong><%= link_to "Book now for €#{@offer.fee}", offer_bookings_path(@offer), method: :post, data: {confirm: 'Do you want to proceed with booking?'}, target: "_blank" %></strong>
+      <div class="block">
+        <p class="title-label">OFFER DETAILS</p>
+        <div class="btn-flat rails-link-to text-decoration-none">
+          <strong><%= link_to "Book now for €#{@offer.fee}", offer_bookings_path(@offer), method: :post, data: {confirm: 'Do you want to proceed with booking?'}, target: "_blank" %></strong>
+        </div>
+      </div>
+      <div>
+        <p class="title-label">REVIEWS</p>
+
+        <ul class="reviews">
+        <% @offer.reviews each do |offer| %>
+        <li class="cards_item">
+          <div class="card-trip">
+            <img src="https://source.unsplash.com/random" class="trip-image"/>
+            <%= button_to "Delete booking", booking_path(1), class: "btn-delete hide", method: :delete %>
+            <div class="card-trip-infos">
+              <div>
+                <%= link_to offer do %>
+                  <h2><%= offer.title %></h2>
+                <% end %>
+                <p><%= offer.description %></p>
+                <h2 id="card-location"><%= offer.location %></h2>
+              </div>
+              <div>
+                <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  </div>
+                </div>
+              </div>
+            </li>
+        <% end %>
+      </div>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
    </div>

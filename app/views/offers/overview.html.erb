@@ -3,7 +3,7 @@
 <div class="main">
   <h2>My offers</h2>
   <% if @my_offers.nil? || @my_offers.empty? %>
-    <p>No offers organized.</p>
+    <p>You have not organized a trip yet. Lets create one!</p>
   <% else %>
     <ul class="cards">
       <% @my_offers.each do |offer| %>
@@ -29,31 +29,32 @@
     </ul>
   <% end %>
 
-  <h2>Booked offers</h2>
+  <h2>My bookings</h2>
   <% if @booked_offers.nil? || @booked_offers.empty? %>
-    <p>No offers booked.</p>
+    <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong>. Start booking now!</u></p>
   <% else %>
-      <ul class="cards">
-        <% @booked_offers.each do |offer| %>
-          <%= link_to offer do %>
-            <li class="cards_item">
-              <div class="card-trip">
-                <img src="https://source.unsplash.com/random" />
-                <div class="card-trip-infos">
-                  <div>
-                    <h2><%= offer.title %></h2>
-                    <p><%= offer.description %></p>
-                    <h2 id="card-location"><%= offer.location %></h2>
-                  </div>
-                  <div>
-                    <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-                    <%# <%= link_to "Cancel", booking_path(current_user.bookings.where(offer_id: offer.id)[0]), method: :delete, data: {confirm: 'Are you sure you want to delete this booking?'}%> %>
-                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u></p>
+  <ul class="cards">
+    <% @booked_offers.each do |offer| %>
+        <li class="cards_item">
+          <div class="card-trip">
+            <img src="https://source.unsplash.com/random" class="trip-image"/>
+            <%= button_to "Delete booking", booking_path(1), class: "btn-delete hide", method: :delete %>
+            <div class="card-trip-infos">
+              <div>
+                <%= link_to offer do %>
+                  <h2><%= offer.title %></h2>
+                <% end %>
+                <p><%= offer.description %></p>
+                <h2 id="card-location"><%= offer.location %></h2>
+              </div>
+              <div>
+                <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                   </div>
                 </div>
               </div>
             </li>
-          <% end %>
         <% end %>
       </div>
     </ul>
