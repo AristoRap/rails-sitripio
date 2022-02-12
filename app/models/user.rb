@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :offers, through: :bookings
   has_many :reviews
+  has_one_attached :photo
 
   def my_offers
     Offer.where(organizer_id: id)
