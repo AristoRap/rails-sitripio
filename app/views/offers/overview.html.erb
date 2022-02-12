@@ -2,11 +2,11 @@
 
 <div class="main">
   <h2>My offers</h2>
-  <% if @my_offers.nil? || @my_offers.empty? %>
+  <% if @user_offers.nil? || @user_offers.empty? %>
     <p>You have not organized a trip yet. Lets create one!</p>
   <% else %>
     <ul class="cards">
-      <% @my_offers.each do |offer| %>
+      <% @user_offers.each do |offer| %>
         <%= link_to offer do %>
           <li class="cards_item">
             <div class="card-trip">
