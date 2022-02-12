@@ -1,14 +1,10 @@
 .footer {
-   position:absolute;
-   padding: 10px 10px 0px 10px;
-   bottom:0;
-   width:100%;
+   padding: 1rem;
    height:40px;   /* Height of the footer */
-   background:#6cf;
    flex-shrink: 0;
+   text-align: center;
 }
 
-.bi {
-  vertical-align: -.125em;
-  fill: currentColor;
+.social-media {
+  text-decoration: none;
 }

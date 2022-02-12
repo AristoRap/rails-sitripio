@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-  belongs_to :organizer, class_name: 'User', foreign_key: "organizer_id", dependent: :destroy
+  belongs_to :organizer, class_name: 'User', foreign_key: "organizer_id"
   has_many_attached :photos
   geocoded_by :location
 

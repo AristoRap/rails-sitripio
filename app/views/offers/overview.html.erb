@@ -3,7 +3,7 @@
 <div class="main">
   <h2>My offers</h2>
   <% if @my_offers.nil? || @my_offers.empty? %>
-    <p>No offers organized.</p>
+    <p>You have not organized a trip yet. Lets create one!</p>
   <% else %>
     <ul class="cards">
       <% @my_offers.each do |offer| %>
@@ -19,7 +19,11 @@
                 </div>
                 <div>
                   <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <% if offer.organizer.photo.attached? %>
+                <%= cl_image_tag offer.organizer.photo.key, class:'organizer-avatar'%>
+              <% else %>
+                <%= image_tag asset_path('avatar_default.png'), class: 'organizer-avatar' %>
+              <% end %>
                 </div>
               </div>
             </div>
@@ -29,30 +33,38 @@
     </ul>
   <% end %>
 
-  <h2>Booked offers</h2>
+  <h2>My bookings</h2>
   <% if @booked_offers.nil? || @booked_offers.empty? %>
-    <p>No offers booked.</p>
+    <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u>. Start booking now!</p>
   <% else %>
+    <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u></p>
     <ul class="cards">
       <% @booked_offers.each do |offer| %>
-        <%= link_to offer do %>
-          <li class="cards_item">
-            <div class="card-trip">
-              <img src="https://source.unsplash.com/random" />
-              <div class="card-trip-infos">
-                <div>
+        <li class="cards_item">
+          <div class="card-trip">
+            <img src="https://source.unsplash.com/random" class="trip-image"/>
+            <%= button_to "Delete booking", booking_path(current_user.bookings.find_by(offer_id: offer.id)), class: "btn-delete hide", method: :delete  %>
+            <div class="card-trip-infos">
+
+              <div>
+                <%= link_to offer do %>
                   <h2><%= offer.title %></h2>
-                  <p><%= offer.description %></p>
-                  <h2 id="card-location"><%= offer.location %></h2>
-                </div>
-                <div>
-                  <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                </div>
+                <% end %>
+                <p><%= offer.description %></p>
+                <h2 id="card-location"><%= offer.location %></h2>
+              </div>
+
+              <div>
+                <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
+                <% if offer.organizer.photo.attached? %>
+                  <%= cl_image_tag offer.organizer.photo.key, class:'organizer-avatar'%>
+                <% else %>
+                  <%= image_tag asset_path('avatar_default.png'), class: 'organizer-avatar' %>
+                <% end %>
               </div>
             </div>
-          </li>
-        <% end %>
+          </div>
+        </li>
       <% end %>
     </ul>
   <% end %>
