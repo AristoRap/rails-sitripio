@@ -15,7 +15,11 @@
             </div>
             <div>
               <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-              <%= image_tag  @user.avatar.to_s, class: "user-image" %>
+              <% if offer.organizer.photo.attached? %>
+                <%= cl_image_tag offer.organizer.photo.key, class:'organizer-avatar'%>
+              <% else %>
+                <%= image_tag asset_path('avatar_default.png'), class: 'organizer-avatar' %>
+              <% end %>
               <img  src="" class="card-trip-user avatar-bordered" />
             </div>
           </div>

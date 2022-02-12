@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    redirect_to overview_path
   end
 
   def create

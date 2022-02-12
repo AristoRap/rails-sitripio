@@ -19,7 +19,11 @@
                 </div>
                 <div>
                   <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <% if offer.organizer.photo.attached? %>
+                <%= cl_image_tag offer.organizer.photo.key, class:'organizer-avatar'%>
+              <% else %>
+                <%= image_tag asset_path('avatar_default.png'), class: 'organizer-avatar' %>
+              <% end %>
                 </div>
               </div>
             </div>
@@ -31,7 +35,7 @@
 
   <h2>My bookings</h2>
   <% if @booked_offers.nil? || @booked_offers.empty? %>
-    <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong>. Start booking now!</u></p>
+    <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u>. Start booking now!</p>
   <% else %>
     <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u></p>
   <ul class="cards">
@@ -39,7 +43,7 @@
         <li class="cards_item">
           <div class="card-trip">
             <img src="https://source.unsplash.com/random" class="trip-image"/>
-            <%= button_to "Delete booking", booking_path(1), class: "btn-delete hide", method: :delete %>
+            <%= button_to "Delete booking", booking_path(current_user.bookings.find_by(offer_id: offer.id)), class: "btn-delete hide", method: :delete  %>
             <div class="card-trip-infos">
               <div>
                 <%= link_to offer do %>
@@ -48,12 +52,15 @@
                 <p><%= offer.description %></p>
                 <h2 id="card-location"><%= offer.location %></h2>
               </div>
-              
               <div>
                 <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-              </div>
-            </div>
+                <% if offer.organizer.photo.attached? %>
+                <%= cl_image_tag offer.organizer.photo.key, class:'organizer-avatar'%>
+              <% else %>
+                <%= image_tag asset_path('avatar_default.png'), class: 'organizer-avatar' %>
+              <% end %>
+                  </div>
+                </div>
               </div>
             </li>
           <% end %>
