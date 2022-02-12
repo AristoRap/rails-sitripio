@@ -4,10 +4,11 @@
 }
 
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 50px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
+  font-size: 15px;
   font-family: 'Open Sans', sans-serif;
 }
