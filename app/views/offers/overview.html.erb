@@ -1,16 +1,21 @@
-<h1>My Overview</h1>
+<h2 class="head-title"><strong>My Overview</strong></h2>
 
 <div class="main">
+<div class="section">
   <h2>My offers</h2>
-  <% if @my_offers.nil? || @my_offers.empty? %>
+  <% if @user_offers.nil? || @user_offers.empty? %>
     <p>You have not organized a trip yet. Lets create one!</p>
+    <%= button_to "Create offer", new_offer_path, method: :get, class: "btn-flat"  %>
+
   <% else %>
     <ul class="cards">
-      <% @my_offers.each do |offer| %>
+      <% @user_offers.each do |offer| %>
         <%= link_to offer do %>
           <li class="cards_item">
             <div class="card-trip">
-              <img src="https://source.unsplash.com/random" />
+              <% if offer.photos.attached? %>
+                <%= cl_image_tag offer.photos.first.key %>
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <h2 class="crop-title"><%= offer.title %></h2>
@@ -32,10 +37,13 @@
       <% end %>
     </ul>
   <% end %>
+  </div>
 
+  <div class="section">
   <h2>My bookings</h2>
   <% if @booked_offers.nil? || @booked_offers.empty? %>
     <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u>. Start booking now!</p>
+    <%= link_to "Explore trips", offers_path, class: "btn-flat" %>
   <% else %>
     <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u></p>
     <ul class="cards">
@@ -68,4 +76,5 @@
       <% end %>
     </ul>
   <% end %>
+  </div>
 </div>
