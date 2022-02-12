@@ -38,13 +38,14 @@
     <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u>. Start booking now!</p>
   <% else %>
     <p>You have booked <u><strong><%= @booked_offers.count %> trips</strong></u></p>
-  <ul class="cards">
-    <% @booked_offers.each do |offer| %>
+    <ul class="cards">
+      <% @booked_offers.each do |offer| %>
         <li class="cards_item">
           <div class="card-trip">
             <img src="https://source.unsplash.com/random" class="trip-image"/>
             <%= button_to "Delete booking", booking_path(current_user.bookings.find_by(offer_id: offer.id)), class: "btn-delete hide", method: :delete  %>
             <div class="card-trip-infos">
+
               <div>
                 <%= link_to offer do %>
                   <h2><%= offer.title %></h2>
@@ -52,20 +53,19 @@
                 <p><%= offer.description %></p>
                 <h2 id="card-location"><%= offer.location %></h2>
               </div>
+
               <div>
                 <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
                 <% if offer.organizer.photo.attached? %>
-                <%= cl_image_tag offer.organizer.photo.key, class:'organizer-avatar'%>
-              <% else %>
-                <%= image_tag asset_path('avatar_default.png'), class: 'organizer-avatar' %>
-              <% end %>
-                  </div>
-                </div>
+                  <%= cl_image_tag offer.organizer.photo.key, class:'organizer-avatar'%>
+                <% else %>
+                  <%= image_tag asset_path('avatar_default.png'), class: 'organizer-avatar' %>
+                <% end %>
               </div>
-            </li>
-          <% end %>
-        <% end %>
-      </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
     </ul>
   <% end %>
 </div>
