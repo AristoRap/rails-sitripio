@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   before_action :set_offer, only: %i[new create]
   before_action :set_booking, only: %i[update destroy]
 
-
   def edit
   end
 
@@ -23,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.offer = @offer
     @booking.user = current_user
     if @booking.save
-      redirect_to offers_path(@offer)
+      redirect_to overview_path
     else
       render offers_path(@offer)
     end

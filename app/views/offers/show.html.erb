@@ -54,7 +54,7 @@
     <div class="right-info-panel">
       <p class="title-label">OFFER DETAILS</p>
       <div class="btn-flat rails-link-to text-decoration-none">
-        <strong><%= link_to "Book now for €#{@offer.fee}", offer_bookings_path(@offer), method: :post %></strong>
+        <strong><%= link_to "Book now for €#{@offer.fee}", offer_bookings_path(@offer), method: :post, data: {confirm: 'Do you want to proceed with booking?'}, target: "_blank" %></strong>
       </div>
     </div>
    </div>

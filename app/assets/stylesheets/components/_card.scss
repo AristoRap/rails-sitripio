@@ -73,7 +73,8 @@
   border-radius: 0.5rem;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px var(--c3po-light-grey);
+  text-decoration: none;
 }
 
 .card-trip > img {
@@ -86,12 +87,22 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: var(--c3po-grey);
 }
+
+.card-trip h2:hover {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: grey;
+}
+
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  color: var(--c3po-grey);
 }
 
 #card-location {
