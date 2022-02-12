@@ -7,18 +7,21 @@ class OffersController < ApplicationController
   end
 
   def index
+    @offers = Offer.all
+    #@offers = Offer.geocoded
+
+    @markers = @offers.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url('logo.png')
+      }
+    end
     if params[:query].present?
       @offers = Offer.where.not(organizer_id: current_user.id).search_by_title_and_description(params[:query])
     else
       @offers = Offer.where.not(organizer_id: current_user.id)
-    end
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @offers.geocoded.map do |offer|
-      {
-        lat: offer.latitude,
-        lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
-      }
     end
   end
 
