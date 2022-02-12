@@ -13,9 +13,9 @@
               <img src="https://source.unsplash.com/random" />
               <div class="card-trip-infos">
                 <div>
-                  <h2><%= offer.title %></h2>
-                  <p><%= offer.description %></p>
-                  <h2 id="card-location"><%= offer.location %></h2>
+                  <h2 class="crop-title"><%= offer.title %></h2>
+                  <p class="crop-body"><%= offer.description %></p>
+                  <h2 class="card-location"><%= offer.location.split(', ').last %></h2>
                 </div>
                 <div>
                   <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
@@ -48,10 +48,10 @@
 
               <div>
                 <%= link_to offer do %>
-                  <h2><%= offer.title %></h2>
+                  <h2 class="crop-title"><%= offer.title %></h2>
                 <% end %>
-                <p><%= offer.description %></p>
-                <h2 id="card-location"><%= offer.location %></h2>
+                <p class="crop-body"><%= offer.description %></p>
+                <h2 class="card-location"><%= offer.location.split(', ').last %></h2>
               </div>
 
               <div>
