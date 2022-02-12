@@ -12,12 +12,15 @@ class OffersController < ApplicationController
     else
       @offers = Offer.where.not(organizer_id: current_user.id)
     end
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @offers.geocoded.map do |offer|
+    @offers = Offer.all
+    #@offers = Offer.geocoded
+
+    @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
         lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url('logo.png')
       }
     end
   end
