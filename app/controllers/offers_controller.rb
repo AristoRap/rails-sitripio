@@ -7,11 +7,6 @@ class OffersController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @offers = Offer.where.not(organizer_id: current_user.id).search_by_title_and_description(params[:query])
-    else
-      @offers = Offer.where.not(organizer_id: current_user.id)
-    end
     @offers = Offer.all
     #@offers = Offer.geocoded
 
@@ -22,6 +17,11 @@ class OffersController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
         image_url: helpers.asset_url('logo.png')
       }
+    end
+    if params[:query].present?
+      @offers = Offer.where.not(organizer_id: current_user.id).search_by_title_and_description(params[:query])
+    else
+      @offers = Offer.where.not(organizer_id: current_user.id)
     end
   end
 
