@@ -1,4 +1,12 @@
-<h2 class="head-title">We found <u><strong>XX</strong></u> for you</h2>
+<h2 class="head-title">
+  We found
+  <u>
+    <strong>
+      <%= pluralize @offers.size, 'offer' %>
+    </strong>
+  </u>
+  for you
+</h2>
 
 <div class="main">
   <ul class="cards">
