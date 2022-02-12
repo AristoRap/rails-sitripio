@@ -1,19 +1,18 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);">
+<div class="d-flex align-items-start" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);">
   <div class="container">
-    <h1>Add your trip:</strong></h1>
-    <p></p>
-  </div>
-  <div class="simple-form">
-  <%= simple_form_for(@offer) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :fee %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, class: "btn-smpl-form" %>
-    <%= link_to "cancel", overview_path, class: "btn-ghost" %>
-  <% end %>
+    <h1 class="text-white display-4">Create a trip</h1>
+    <div class="bg-transparent">
+      <%= simple_form_for @offer, html: { class: "simple-form-add"} do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :fee %>
+        <%= f.input :start_date, html5: true %>
+        <%= f.input :end_date, html5: true%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.button :submit, 'Create trip', class: "btn-smpl-form" %>
+        <%= link_to "cancel", overview_path, class: "btn-ghost" %>
+      <% end %>
+    </div>
   </div>
 </div>
