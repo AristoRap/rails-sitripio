@@ -15,7 +15,8 @@
             </div>
             <div>
               <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <%= image_tag  @user.avatar.to_s, class: "user-image" %>
+              <img  src="" class="card-trip-user avatar-bordered" />
             </div>
           </div>
         </div>
