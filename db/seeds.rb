@@ -56,10 +56,10 @@ puts 'Creating 6 offers'
     }
   )
   if offer1.save
-    puts "Offer #{offer.id} saved!"
+    puts "Offer #{offer1.id} saved!"
   else
     puts "XXXXXXXXXXXXXX"
-    puts "Issue with offer #{offer.id}"
+    puts "Issue with offer #{offer1.id}"
     puts "XXXXXXXXXXXXXX"
   end
 
@@ -67,7 +67,7 @@ puts 'Creating 6 offers'
     {
       title: "8 Days Fitness and Wellness Retreat on Kos Island",
       description: "Jet off to a fantastic Greek Island and live in luxury in a magnificent boutique villa by night but be out adventuring, exploring, making memories, and working on your fitness by day. Victory Fitness Beach's luxury fitness and wellness retreats are dedicated to encouraging a healthy lifestyle. The week is designed around a variety of conventional fitness activities/classes but also incorporates activities that allow the guests to absorb the local culture and attractions. This isn't your standard three fitness classes a day type retreat, there is just as much focus on wellness and adventure as there is on fitness, whilst living in a luxury boutique villa. This retreat is perfect for somebody that wants to do something different but keep active. One small example is that every guest will be given their own bicycle for the week, nobody is tied to the guest house, everybody is encouraged to go out and explore whenever they like.",
-      location: "Asklipion Valley Guest House, 85300 Kos Island, Greece"
+      location: "Asklipion Valley Guest House, 85300 Kos Island, Greece",
       fee: 1100,
       start_date: Date.today,
       end_date: Date.today + 8,
@@ -76,10 +76,10 @@ puts 'Creating 6 offers'
     }
   )
   if offer2.save
-    puts "Offer #{offer.id} saved!"
+    puts "Offer #{offer2.id} saved!"
   else
     puts "XXXXXXXXXXXXXX"
-    puts "Issue with offer #{offer.id}"
+    puts "Issue with offer #{offer2.id}"
     puts "XXXXXXXXXXXXXX"
   end
 
@@ -96,10 +96,10 @@ puts 'Creating 6 offers'
     }
   )
   if offer3.save
-    puts "Offer #{offer.id} saved!"
+    puts "Offer #{offer3.id} saved!"
   else
     puts "XXXXXXXXXXXXXX"
-    puts "Issue with offer #{offer.id}"
+    puts "Issue with offer #{offer3.id}"
     puts "XXXXXXXXXXXXXX"
   end
 
@@ -116,11 +116,12 @@ puts 'Creating 6 offers'
     }
   )
   if offer4.save
-    puts "Offer #{offer.id} saved!"
+    puts "Offer #{offer4.id} saved!"
   else
     puts "XXXXXXXXXXXXXX"
-    puts "Issue with offer #{offer.id}"
+    puts "Issue with offer #{offer4.id}"
     puts "XXXXXXXXXXXXXX"
+  end
 
     offer5 = Offer.new(
       {
@@ -134,12 +135,14 @@ puts 'Creating 6 offers'
         capacity: 20
       }
     )
+
     if offer5.save
-      puts "Offer #{offer.id} saved!"
+      puts "Offer #{offer5.id} saved!"
     else
       puts "XXXXXXXXXXXXXX"
-      puts "Issue with offer #{offer.id}"
+      puts "Issue with offer #{offer5.id}"
       puts "XXXXXXXXXXXXXX"
+    end
 
       offer6 = Offer.new(
         {
@@ -153,12 +156,14 @@ puts 'Creating 6 offers'
           capacity: 40
         }
       )
+
       if offer6.save
-        puts "Offer #{offer.id} saved!"
+        puts "Offer #{offer6.id} saved!"
       else
         puts "XXXXXXXXXXXXXX"
-        puts "Issue with offer #{offer.id}"
+        puts "Issue with offer #{offer6.id}"
         puts "XXXXXXXXXXXXXX"
+      end
 
 puts 'Creating 2 bookings'
 2.times do |i|
