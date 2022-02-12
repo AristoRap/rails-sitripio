@@ -31,6 +31,9 @@
               <% end %>
                 </div>
               </div>
+              <div class='pl-3 mb-2' >
+                <%= link_to 'Delete offer', offer_path(offer), method: :delete, class: 'text-danger'%>
+              </div>
             </div>
           </li>
         <% end %>
