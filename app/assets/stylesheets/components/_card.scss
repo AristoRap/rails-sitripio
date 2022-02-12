@@ -85,6 +85,7 @@
   font-weight: bold;
   margin: 0;
   color: var(--c3po-grey);
+  margin-top: 1rem;
 }
 
 .card-trip h2:hover {
@@ -94,16 +95,36 @@
   color: grey;
 }
 
-
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
   color: var(--c3po-grey);
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-#card-location {
-  margin-top: 8px;
+.crop-title {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}​
+
+.crop-body {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}​
+
+.card-location {
+  margin-bottom: 1rem;
 }
 
 .card-trip .card-trip-infos {

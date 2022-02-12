@@ -1,6 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+<%= image_tag asset_path('sitripio-logo.png'), class: 'avatar' %>
+
+<h2 class="navbar-sitripo">SiTripiocerefefer</h2>
+
+  <%# commenting out the use of logo generated via the link %>
+  <% if false %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://thenounproject.com/icon/camping-4581388/" %>
+    <% end %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
