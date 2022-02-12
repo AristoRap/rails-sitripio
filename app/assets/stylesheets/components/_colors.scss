@@ -1,0 +1,27 @@
+:root {
+//   --c3po-blue: #1e90ff;
+//   --c3po-white: #ffffff;
+  --c3po-grey: #4A4A4A;
+  --c3po-light-grey: #bcbcbc;
+  --c3po-light-white: #fbfbfb;
+  --c3po-green: #1EDD88;
+  --c3po-green-hover: #1BCB7F;
+//   --c3po-bg: #F4F4F4;
+}
+
+body { background-color: var(--c3po-bg); }
+
+// h2 { border-bottom: 2px solid var(--c3po-white); }
+
+.container {
+  color: var(--c3po-white);
+  background-color: var(--c3po-white);
+  padding: 15px;
+}
+
+button {
+  background-color: var(--c3po-white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}

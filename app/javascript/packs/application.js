@@ -18,6 +18,10 @@ ActiveStorage.start()
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+function myFunction() {
+  alert("I am an alert box!");
+}
+
 // External imports
 import "bootstrap";
 
@@ -30,6 +34,7 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 // mapbox
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
