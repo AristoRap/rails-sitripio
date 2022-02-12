@@ -13,7 +13,9 @@
         <%= link_to offer do %>
           <li class="cards_item">
             <div class="card-trip">
-              <img src="https://source.unsplash.com/random" />
+              <% if offer.photos.attached? %>
+                <%= cl_image_tag offer.photos.first.key %>
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <h2 class="crop-title"><%= offer.title %></h2>
