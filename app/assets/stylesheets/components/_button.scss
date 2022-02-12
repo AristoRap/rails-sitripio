@@ -18,9 +18,18 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: var(--c3po-green);
   transition: background 0.3s ease;
   text-align: center;
+  text-decoration: none;
+}
+
+.btn-flat a{
+  color: white;
+}
+
+.btn-flat a:hover{
+  color: var(--c3po-light-white);
   text-decoration: none;
 }
 
@@ -36,7 +45,7 @@
 
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: var(--c3po-green-hover);
   color: white;
   text-decoration: none;
 }
@@ -65,10 +74,33 @@
   border-radius: 0.5rem;
   border: none;
   color: #ffffff;
-  background: #1EDD88;
+  background: var(--c3po-green);
   font-weight: bold;
 }
 
 .simple_form .btn-smpl-form:hover {
-  background: #3ca375;
+  background: var(--c3po-green);
+}
+
+.btn-delete{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(var(--c3po-green), var(--c3po-green-hover));
+  transition: background 0.3s ease;
+  border: none;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  max-height: 50%;
+  overflow: hidden;
+}
+
+.hide {
+  display: block;
+}
+
+.trip-image:hover + .hide {
+  display: block;
 }

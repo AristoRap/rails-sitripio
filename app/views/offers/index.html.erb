@@ -1,4 +1,4 @@
-<h1>Showing XX results</h1>
+<h1>We found <u><strong>XX</strong></u> for you</h1>
 
 <div class="main">
   <ul class="cards">
@@ -15,7 +15,8 @@
             </div>
             <div>
               <h2 class="card-trip-pricing">€<%= offer.fee %></h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <%= image_tag  @user.avatar.to_s, class: "user-image" %>
+              <img  src="" class="card-trip-user avatar-bordered" />
             </div>
           </div>
         </div>
