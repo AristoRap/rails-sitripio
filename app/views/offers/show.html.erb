@@ -2,14 +2,10 @@
 <div class="bootstrap-carousel">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Third slide">
+      <% @offer.photos.each_with_index do |photo, index| %>
+        <div class="carousel-item <%= "active" if index.zero? %>">
+        <%= cl_image_tag photo.key, class: "d-block w-100 carousel-item active" %>
+      <% end %>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -33,7 +29,7 @@
             <div class="organizer">
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="trip-organizer" />
               <div class="organizer-infos">
-                <p><%= @offer.organizer.email %>. about me blablahblah</p>
+                <p>Contact me: <%= @offer.organizer.email %></p>
               </div>
             </div>
           <h3>Higlights</h3>
@@ -47,6 +43,10 @@
               <i class="fas fa-users"></i>
               <p>Maximum group size: <strong><%= @offer.capacity %> people</strong> </p>
             </div>
+            <div class="details-icon">
+              <i class="fas fa-globe-americas"></i>
+              <p>Location: <strong><%= @offer.location %> people</strong> </p>
+            </div>
           </div>
         </div>
       </div>
@@ -55,6 +55,9 @@
       <div class="block">
         <p class="title-label">OFFER DETAILS</p>
         <div class="btn-flat rails-link-to text-decoration-none">
+
+
+
           <strong><%= link_to "Book now for €#{@offer.fee}", offer_bookings_path(@offer), method: :post, data: {confirm: 'Do you want to proceed with booking?'}, target: "_blank" %></strong>
         </div>
       </div>
