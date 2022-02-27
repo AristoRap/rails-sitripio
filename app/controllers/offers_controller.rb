@@ -11,7 +11,7 @@ class OffersController < ApplicationController
       @markers = @offers.geocoded.map do |offer| {
         lat: offer.latitude,
         lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+        info_window: render_to_string(partial: "/offers/info_window", locals: { offer: offer })
       }
     end
     if params[:query].present?
